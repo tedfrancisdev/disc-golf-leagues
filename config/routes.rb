@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get '/leagues', to: "homes#index"
 
-  resources :leagues, only: [:index, :show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      resources :leagues, only: [:index]
+    end
+  end
 end
