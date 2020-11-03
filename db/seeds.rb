@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-league_1 = League.create(league_name: "Throw Away", location: "Mansfield, MA")
-league_2 = League.create(league_name: "Par-Tee", location: "Boston, MA")
-league_3 = League.create(league_name: "Ace in the Hole", location: "Middleboro, MA")
+league_1 = League.create(league_name: "Throw Away", location: "Mansfield, MA", description: "We are a friendly group of disc golfers that are just looking to bring a little competitiveness to our play. We currently have 6 members but we are open to having anywhere up to 10.")
+league_2 = League.create(league_name: "Par-Tee", location: "Boston, MA", description: "Group of college students that hit the course in our free time. We like to PARTY! Come have a good time with us discing or partying back at our frat house after!")
+league_3 = League.create(league_name: "Ace in the Hole", location: "Middleboro, MA", description: "We are an extremely competitive league of semi professional golfers. We like to have matches once per week when we are not playing tournaments. If you are not skilled please look elsewhere.")
 
 user_1 = User.create(first_name: "Danny", last_name: "Slants", email: "dgthrower@gmail.com", password: "123456", location: "Boston, MA", leagues: [league_2])
 user_2 = User.create(first_name: "Jack", last_name: "Babble", email: "babbleJ@hotmail.com", location: "Mansfield, MA", leagues: [league_1])
