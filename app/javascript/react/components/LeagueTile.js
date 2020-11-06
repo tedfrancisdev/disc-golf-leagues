@@ -3,14 +3,13 @@ import { Link } from "react-router-dom"
 
 const LeagueTile = (props) => {
   return (
-    <tr>
-      <td><Link to={`leagues/${props.id}`} >
+    <div>
+      <Link to={`leagues/${props.id}`} >
         {props.name}
-      </Link></td>
-      <td><p>{props.location}</p></td>
-    </tr>
+      </Link>
+      <p>{props.location}</p>
+    </div>
   )
 }
-
 
 export default LeagueTile
