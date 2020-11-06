@@ -17,7 +17,6 @@ const LeagueShowContainer = (props) => {
       })
       .then(response => response.json())
       .then(body => {
-        debugger
         setLeagueShow(body)        
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`)) 

@@ -36,7 +36,6 @@ const LeagueIndex = (props) => {
 
   return(
     <div className = 'grid-container'>
-      <div className='background-image'></div>
       <div className='show-callout'>
         <table>
           <thead>
