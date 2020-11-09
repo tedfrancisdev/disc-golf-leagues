@@ -75,11 +75,11 @@ const LeagueIndex = (props) => {
             </tr>
           </thead>
           <tbody>
-            <LeagueFormContainer addNewLeague={addNewLeague} />
           
             {leagueTiles}
           </tbody>
         </table>
+          <LeagueFormContainer addNewLeague={addNewLeague} />
       </div>
     </div>
   )
