@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const LeagueShowContainer = (props) => {
-  const[leagueShow, setLeagueShow] = useState({})
+  const[league, setLeague] = useState({})
 
   useEffect(() => {
     let id = props.match.params.id
@@ -17,17 +17,16 @@ const LeagueShowContainer = (props) => {
       })
       .then(response => response.json())
       .then(body => {
-        debugger
-        setLeagueShow(body)        
+        setLeague(body)        
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`)) 
     }, [])
 
   return(
     <div>
-      <h1>{leagueShow.league_name}</h1>
-      <p>{leagueShow.location}</p>
-      <p>{leagueShow.description}</p>
+      <h1>{league.league_name}</h1>
+      <p>{league.location}</p>
+      <p>{league.description}</p>
     </div>
   ) 
 }
