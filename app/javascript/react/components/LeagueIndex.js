@@ -45,8 +45,8 @@ const LeagueIndex = (props) => {
     })
     .then(response => response.json())
     .then(body => {
-      setLeague([
-        ...league, 
+      setLeagues([
+        ...leagues, 
         body,
       ]);
   })
@@ -75,7 +75,6 @@ const LeagueIndex = (props) => {
             </tr>
           </thead>
           <tbody>
-          
             {leagueTiles}
           </tbody>
         </table>

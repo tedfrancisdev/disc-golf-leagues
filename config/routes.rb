@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :leagues, only: [:index, :show]
+      resources :leagues, only: [:index, :show, :create]
       resources :users, only: [:show]
     end
-    resources :leagues, only: [:create]
+    # resources :leagues, only: [:create]
   end
 end

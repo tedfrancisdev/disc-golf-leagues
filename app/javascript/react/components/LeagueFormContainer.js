@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import ErrorList from "./ErrorList"
+import _ from 'lodash'
 
 const LeagueFormContainer = (props) => {
   const [newLeague, setNewLeague] = useState({
@@ -13,15 +15,34 @@ const LeagueFormContainer = (props) => {
       [event.currentTarget.name]: event.currentTarget.value
     });
   };
+
+  // const validForSubmission = () => {
+  //   let submitErrors = {}
+  //   const requiredFields = ["league_name", "location", "description"]
+
+  //   requiredFields.forEach(field => {
+  //     if (newLeague[field].trim() === "") {
+  //       submitErrors = {
+  //         ...submitErrors,
+  //         [field]: "is blank"
+  //       }
+  //     }
+  //   })
+
+  //   setErrors(submitErrors)
+  //   return _.isEmpty(submitErrors)
+  // }
   
   const handleSubmit = event => {
     event.preventDefault();
-    props.addNewLeague(newLeague);
-    setNewLeague({
-      league_name: "",
-      location: "",
-      description: ""
-    });
+    // if (validForSubmission()) {
+      props.addNewLeague(newLeague);
+      setNewLeague({
+        league_name: "",
+        location: "",
+        description: ""
+      });
+    // }
   };
   
   return (
