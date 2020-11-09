@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       resources :leagues, only: [:index, :show]
       resources :users, only: [:show]
     end
+    resources :leagues, only: [:create]
   end
 end
