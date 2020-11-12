@@ -23,11 +23,24 @@ const LeagueShowContainer = (props) => {
     }, [])
 
   return(
-    <div>
-      <h1>{league.league_name}</h1>
-      <p>{league.location}</p>
-      <p>{league.description}</p>
+    <div className="basic-card">
+    <div className="basic-card-image">
+      <img src='/images/basket.jpg'/>
     </div>
+    <div className="basic-card-content content callout secondary">
+      <h5>{league.league_name}</h5>
+      <p>Location: {league.location}</p>
+    </div>
+    <div className="links callout primary">
+      <ul className="menu">
+        <li>
+        <p>{league.description}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
   ) 
 }
 
