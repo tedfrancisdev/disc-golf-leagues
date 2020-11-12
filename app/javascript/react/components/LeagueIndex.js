@@ -65,20 +65,20 @@ const LeagueIndex = (props) => {
   })
 
   return(
-    <div className = 'grid-container'>
+    <div className='grid-container'>
       <div className='show-callout'>
-        <table>
+        <table className="responsive-card-table unstriped">
           <thead>
             <tr>
-              <th width='200'>League Name:</th>
-              <th width='200'>Location:</th>
+              <th>League Name</th>
+              <th>Location</th>
             </tr>
           </thead>
           <tbody>
-            {leagueTiles}
+              {leagueTiles}
           </tbody>
         </table>
-          <LeagueFormContainer addNewLeague={addNewLeague} />
+        <LeagueFormContainer addNewLeague={addNewLeague} />
       </div>
     </div>
   )
