@@ -24,8 +24,8 @@ const LeagueShowContainer = (props) => {
 
   return(
     <div className="basic-card">
-    <div className="basic-card-image">
-      <img src='/images/basket.jpg'/>
+    <div className="basic-card-image scoreboard">
+      <img src='/images/Leaderboard.png'/>
     </div>
     <div className="basic-card-content content callout secondary">
       <h5>{league.league_name}</h5>
