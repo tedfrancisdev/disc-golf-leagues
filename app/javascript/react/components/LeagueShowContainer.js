@@ -38,6 +38,9 @@ const LeagueShowContainer = (props) => {
         </li>
       </ul>
     </div>
+    <div className="button-group">
+      <input className="button" type="submit" value="Join League" />
+    </div>
   </div>
   
   
