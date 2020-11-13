@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "/leagues/:id", to: "homes#index"
   get "/users/:id", to: "homes#index"
 
+  resources :users, only: [:show]
+
   namespace :api do
     namespace :v1 do
       resources :leagues, only: [:index, :show, :create]

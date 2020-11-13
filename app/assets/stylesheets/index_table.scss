@@ -5,6 +5,10 @@ $responsive-card-table-border: 1px solid $black;
 $responsive-card-table-stack-point: 640px;
 $responsive-card-table-label-bg: $light-gray;
 
+.show-callout {
+  margin-top: 1em;
+}
+
 .responsive-card-table {
   border-collapse: collapse;
   margin-top: 1rem;
