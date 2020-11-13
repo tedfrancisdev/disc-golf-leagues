@@ -69,13 +69,13 @@ const LeagueFormContainer = (props) => {
       </label>
       <label>
         Description:
-        <input
-          name="description"
+        <textarea 
+          name="description" 
           id="description"
-          type="text"
+          rows="3"
           onChange={handleChange}
-          value={newLeague.description}
-        />
+          value={newLeague.description}>
+        </textarea>
       </label>
       <div className="button-group">
         <input className="button" type="submit" value="Submit" />
