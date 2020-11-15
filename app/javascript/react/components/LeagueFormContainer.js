@@ -48,7 +48,7 @@ const LeagueFormContainer = (props) => {
   return (
     <form onSubmit={handleSubmit} className="new-league-form callout">
       <label>
-        League Name:
+        League Name
         <input
           name="league_name"
           id="league_name"
@@ -58,7 +58,7 @@ const LeagueFormContainer = (props) => {
         />
       </label>
       <label>
-        Location:
+        Location
         <input
           name="location"
           id="location"
@@ -68,7 +68,7 @@ const LeagueFormContainer = (props) => {
         />
       </label>
       <label>
-        Description:
+        Description
         <textarea 
           name="description" 
           id="description"

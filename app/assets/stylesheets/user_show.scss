@@ -1,0 +1,34 @@
+@import 'settings';
+
+// Source: https://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
+$about-the-user-text-transform: uppercase;
+$about-the-user-separator-width: 5rem;
+$about-the-user-separator-thickness: 0.125rem;
+
+.about-the-user {
+  background-color: $white;
+  padding: 1rem;
+  border: 1px solid $medium-gray;
+
+  .separator-left {
+    text-align: left;
+    @include clearfix;
+
+    &::after {
+      position: relative;
+      width: $about-the-user-separator-width;
+      border-bottom: $about-the-user-separator-thickness solid $primary-color;
+      margin: 0.3rem auto 0;
+      margin-left: 0;
+    }
+  }
+
+  .user-title {
+    text-transform: $about-the-user-text-transform;
+  }
+
+  .user-image {
+    border: 1px solid $medium-gray;
+  }
+}
+
