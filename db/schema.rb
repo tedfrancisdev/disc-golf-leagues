@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_173907) do
+ActiveRecord::Schema.define(version: 2020_11_15_190529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "joins", force: :cascade do |t|
+    t.bigint "league_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_joins_on_league_id"
+    t.index ["user_id"], name: "index_joins_on_user_id"
+  end
 
   create_table "leagues", force: :cascade do |t|
     t.string "league_name", null: false
@@ -21,15 +30,6 @@ ActiveRecord::Schema.define(version: 2020_11_02_173907) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "sign_ups", force: :cascade do |t|
-    t.bigint "league_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["league_id"], name: "index_sign_ups_on_league_id"
-    t.index ["user_id"], name: "index_sign_ups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

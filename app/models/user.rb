@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :sign_ups
-  has_many :leagues, through: :sign_ups
+  has_many :joins
+  has_many :leagues, through: :joins
 
   validates :first_name, presence: true
   validates :last_name, presence: true
