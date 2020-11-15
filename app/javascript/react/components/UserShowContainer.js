@@ -26,7 +26,7 @@ const UserShowContainer = (props) => {
   }, [])
 
   let userLeagueArray = []
-  let userNoLeagueMessage = ""
+  let userNoLeagueMessage = "You have not joined any leagues yet."
   if (userShow.leagues) {
     userLeagueArray = userShow.leagues.map((league) => {
       return(

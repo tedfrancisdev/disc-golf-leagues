@@ -1,31 +1,51 @@
 import React, { useState, useEffect } from 'react'
+import LeagueUserTile from './LeagueUserTile'
 
 const LeagueShowContainer = (props) => {
   const[league, setLeague] = useState({})
-
+  
   useEffect(() => {
     let id = props.match.params.id
     fetch(`/api/v1/leagues/${id}`)
-      .then(response => {
-        if (response.ok) {
-          return response
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage)
-          throw error
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        setLeague(body)        
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`)) 
-    }, [])
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      setLeague(body)        
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`)) 
+  }, [])
 
+  let leagueUserArray = []
+  let leagueUsersMessage = ""
+  if (league.users) {
+    leagueUserArray = league.users.map((user) => {
+      return(
+        <LeagueUserTile
+          key={user.id}
+          id={user.id}
+          first_name={user.first_name}
+          last_name={user.last_name}
+          location={user.location}
+          skill_level={user.skill_level}
+        />
+      )
+    })
+  } else {
+    leagueUsersMessage = "You have no users yet."
+  }
+  
   return(
     <div className="basic-card">
     <div className="basic-card-image scoreboard">
-      <img src='/images/Leaderboard.png'/>
+      {/* <img src='/images/Leaderboard.png'/> */}
     </div>
     <div className="basic-card-content content callout secondary">
       <h5>{league.league_name}</h5>
@@ -40,6 +60,10 @@ const LeagueShowContainer = (props) => {
     </div>
     <div className="button-group">
       <input className="button" type="submit" value="Join League" />
+    </div>
+    <div>
+      {leagueUserArray}
+      {leagueUsersMessage}
     </div>
   </div>
   

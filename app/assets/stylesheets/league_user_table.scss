@@ -1,23 +1,18 @@
 @import 'settings';
 
-$responsive-card-table-bottom-gap: 1.5rem;
-$responsive-card-table-border: 1px solid $black;
-$responsive-card-table-stack-point: 640px;
-$responsive-card-table-label-bg: #D7EBF9;
+$league-user-table-bottom-gap: 1.5rem;
+$league-user-table-border: 1px solid $black;
+$league-user-table-stack-point: 640px;
+$league-user-table-label-bg: #D7EBF9;
 
-.new-league-form {
-  margin-top: 1em;
-}
-
-.show-callout {
+.show-callout-user {
   margin-top: 1em;
   display: block;
-  width: 40%;
+  width: 100%;
   margin: auto;
-  text-align: center;
 }
 
-.responsive-card-table {
+.league-user-table {
   border-collapse: collapse;
   margin-top: 1rem;
   
@@ -26,42 +21,43 @@ $responsive-card-table-label-bg: #D7EBF9;
   }
   
   th {
-    background-color: $responsive-card-table-label-bg;
+    background-color: $league-user-table-label-bg;
+    text-align: center;
   }
   
   tr,
   th,
   td {
-    border: $responsive-card-table-border;
+    border: $league-user-table-border;
     text-align: center;
   }
-
-  @media screen and (max-width: $responsive-card-table-stack-point) {
+  
+  @media screen and (max-width: $league-user-table-stack-point) {
     thead tr {
       position: absolute;
       top: -9999em;
       left: -9999em;
     }
-
+    
     tr {
-      border: $responsive-card-table-border;
+      border: $league-user-table-border;
       display: block;
     }
-
+    
     tr + tr {
-      margin-top: $responsive-card-table-bottom-gap;
+      margin-top: $league-user-table-bottom-gap;
     }
     /* Get table cells to act like rows */
-
+    
     td {
       border: none;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      border-bottom: $responsive-card-table-border;
+      border-bottom: $league-user-table-border;
       padding-left: 50%;
       position: relative;
-
+      
       &:before {
         content: attr(data-label);
         display: inline-block;
@@ -72,11 +68,11 @@ $responsive-card-table-label-bg: #D7EBF9;
         position: relative;
         z-index: 1;
       }
-
+      
       &:after {
         content: '';
         position: absolute;
-        background: $responsive-card-table-label-bg;
+        background: $league-user-table-label-bg;
         width: 45%;
         height: 95%;
         left: 1px;
