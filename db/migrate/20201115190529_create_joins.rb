@@ -1,6 +1,6 @@
-class CreateSignUps < ActiveRecord::Migration[5.2]
+class CreateJoins < ActiveRecord::Migration[5.2]
   def change
-    create_table :sign_ups do |t|
+    create_table :joins do |t|
       t.belongs_to :league, null: false
       t.belongs_to :user, null: false
 
