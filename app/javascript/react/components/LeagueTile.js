@@ -5,7 +5,7 @@ const LeagueTile = (props) => {
   return (
     <tr>
       <td>
-        <Link to={`leagues/${props.id}`} >
+        <Link class="league-links" to={`leagues/${props.id}`} >
           {props.name}
         </Link>
       </td>

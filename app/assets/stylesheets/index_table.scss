@@ -3,7 +3,7 @@
 $responsive-card-table-bottom-gap: 1.5rem;
 $responsive-card-table-border: 1px solid $black;
 $responsive-card-table-stack-point: 640px;
-$responsive-card-table-label-bg: #D7EBF9;
+$responsive-card-table-label-bg: #3A506B;
 
 .new-league-form {
   margin-top: 1em;
@@ -15,11 +15,17 @@ $responsive-card-table-label-bg: #D7EBF9;
   width: 40%;
   margin: auto;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+// .league-links {
+//   color:;
+// }
 
 .responsive-card-table {
   border-collapse: collapse;
   margin-top: 1rem;
+  
   
   &.unstriped tbody {
     background-color: transparent;
@@ -32,8 +38,10 @@ $responsive-card-table-label-bg: #D7EBF9;
   tr,
   th,
   td {
+    background-color: #1C2541;
     border: $responsive-card-table-border;
     text-align: center;
+    color: #F2DDA4;
   }
 
   @media screen and (max-width: $responsive-card-table-stack-point) {
